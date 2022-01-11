@@ -24,12 +24,14 @@
         document.getElementById("clockDisplay").innerHTML =
         hours + "h " + minutes + "m " + seconds + "s ";
         }
+        
 
-
-        function setCurrentRoundClock(timeToGo,workoutInterval ) {
-          document.getElementById('currentRoundClockDisplay').innerHTML = timeToGo - workoutInterval;
-
+        function setCurrentRoundClock(timeToGo,workoutInterval) {
+        document.getElementById('currentRoundClockDisplay').innerHTML =
+        (timeToGo - workoutInterval);
+        
         }
+
         function startTraining() {
         var startButton = document.getElementById('startButton')
         startButton.classList.add('hide')
@@ -44,9 +46,14 @@
      
 
         setClock(distance);
-        setCurrentRoundClock(timeToGoInSeconds,workoutPhases[phaseIndex])
+        setCurrentRoundClock(timeToGoInSeconds,workoutPhases[phaseIndex]) 
+    
+    
+      
+         
+  
 
-        if(workoutPhases[phaseIndex] >= timeToGoInSeconds && phaseIndex == 0) {
+        if(workoutPhases[phaseIndex] >= timeToGoInSeconds) {
           document.getElementById("currentActivity").innerHTML = PAST_SCHEDULE[phaseIndex]['title'];
           document.getElementById("nextActivity").innerHTML = PAST_SCHEDULE[phaseIndex + 1]['title'];
           phaseIndex += 1;
@@ -123,3 +130,5 @@
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
 </html>
+
+
